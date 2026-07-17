@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <title>Frontend Mentor | Manage landing page</title>
+
+
+
+  <style>
+    .attribution {
+      font-size: 0.6875rem;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: hsl(228, 39%, 23%);
+
+      min-height: 100vh;
+
+
+
+    }
+
+
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 100%;
+      display: grid;
+      margin: 0 auto;
+      padding: 0 1rem;
+      
+      
+
+  
+    }
+      
+
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      max-width: 340px;
+
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      color: hsl(228, 39%, 23%);
+    }
+
+    .main-nav li {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    
+    }
+
+    .main-nav.active {
+      display: block;
+    }
+
+    .menu-close {
+      display: none;
+      border: none;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      color:
+        hsl(228, 39%, 23%);
+      max-width: 13ch;
+      margin-top: .5rem;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: .5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-content p {
+      font-size: 1rem;
+      
+      font-weight: 400;
+      max-width: 30ch;
+      margin-top: 0;
+      margin-bottom: 1,5rem;
+      line-height: 1.6;
+      padding-bottom: 1.5rem;
+    }
+
+    .hero .btn {
+      border-radius: 1.5rem;
+      padding: .85rem 2rem;
+      background-color: hsl(12, 88%, 59%);
+      margin: 3rem auto 4rem;
+      font-size: .75rem;
+      color: white;
+    }
+
+    .hero-content {
+      text-align: center;
+    }
+    .hero {
+      padding-bottom: 6rem;
+       
+    }
+
+    .article-intro h2 {
+
+      max-width: 14ch;
+      margin: 0 auto 1rem;
+      letter-spacing: -0.03em;
+      font-size: 2rem;
+      text-align: center;
+
+
+    }
+
+
+    .articles .article-intro p {
+      max-width: 34ch;
+      text-align: center;
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom: 1rem;
+      font-size: .85rem;
+      margin: 0 auto;
+    }
+
+    .article-heading span {
+      display: inline-block;
+      width: 65px;
+      height: 35px;
+      border-radius: 1.2rem;
+      background-color: orangered;
+      color: white;
+      line-height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .article-heading {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      height: 35px;
+      line-height: 35px;
+      background-color: hsl(13, 100%, 96%);
+      border-top-left-radius: 1.2rem;
+      border-bottom-left-radius: 1.2rem;
+
+
+
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-block;
+      height: 35px;
+
+      line-height: 35px;
+    }
+
+
+    .articles .article-content p {
+      max-width: 40ch;
+      padding: .3rem;
+      font-size: .85rem;
+      padding-bottom: 2rem;
+      line-height: 1.6rem;
+    
+    }
+
+    .article-intro {
+      padding-bottom: 2rem;
+    }
+    .articles {
+      padding: 0 .5rem;
+      
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .testimonials {
+
+      padding-top: 0;
+      text-align: center;
+      padding-bottom: 3.5rem;
+
+    }
+
+    .testimonials h2 {
+      font-size: 2rem;
+      padding-bottom: 1.5rem;
+      padding-top: 1rem;
+     letter-spacing: -0.03em;
+    }
+
+    .testimonial img {
+      width: 20%;
+      height: 20%;
+      margin: .5rem auto;
+    }
+
+    .testimonial {
+      display: none;
+    }
+
+    .testimonial.active {
+      display: block;
+    }
+
+    .testimonial p {
+      margin: 0 auto;
+    max-width: 30ch;
+    
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      padding-top: 3rem;
+    }
+
+    .dot {
+      width: .5rem;
+      height: .5rem;
+      border-radius: 50%;
+      border: 1px solid hsl(12, 88%, 59%);
+      background: white;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .dot.active {
+      background: hsl(12, 88%, 59%);
+    }
+
+    .testimonial-btn {
+
+      border-radius: 1.5rem;
+      padding: .85rem 2rem;
+      background-color: hsl(12, 88%, 59%);
+      margin: 3rem auto;
+      font-size: .75rem;
+      color: white;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta {
+      background-color: orangered;
+      padding-bottom: 5rem;
+      padding-top: 3rem;
+      background-image: url("images/bg-simplify-section-mobile.svg");
+      background-repeat: no-repeat;
+
+      background-size: 93px;
+      background-position: left center;
+
+    }
+
+    .cta .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    
+    }
+
+
+
+
+    .cta h2 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: white;
+      max-width: 12ch;
+      text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 0;
+      margin-bottom: 1rem;
+
+    }
+
+    .cta-btn {
+      background-color: white;
+      color: orangered;
+      border-radius: 1.5rem;
+      padding: .85rem 2rem;
+
+
+      margin: .5rem auto 0;
+      font-size: .75rem;
+      font-weight: 600;
+
+
+
+    }
+
+    .footer .container {
+      padding-top: 1rem;
+      padding-bottom: .5rem;
+
+
+
+      
+    }
+
+    .footer {
+      background-color: hsl(233, 12%, 13%);;
+      align-items: center;
+      padding: 1rem 1rem .5rem
+      
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      white-space: nowrap;
+      border: 0;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+    }
+
+    .form {
+      display: flex;
+      gap: .5rem;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 1rem;
+
+    }
+
+    .form input {
+      flex: 1;
+      border-radius: 1.5rem;
+      padding: .85rem;
+      background-color: white;
+      border: none;
+      padding-left: 1.5rem;
+
+    }
+
+    .form button {
+
+      border-radius: 1.5rem;
+      padding: .85rem;
+      background-color: orangered;
+      border: none;
+      color: white;
+      width: 4.5rem;
+      font-weight: 500;
+
+
+    }
+
+    .footer-nav {
+      display: flex;
+      color:  hsl(0, 0%, 98%);
+      line-height: 2.5rem;
+      gap: 3rem;
+      list-style: none;
+      padding-bottom: 2rem;
+      padding-top: 1.5rem;
+
+
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      font-weight: 400;
+    }
+
+    .footer-nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 400;
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding-bottom: 0;
+      width: 100%;
+
+    }
+     
+     .social-media svg
+      {
+      color: white;
+      width: 50px;
+      height: 50px;
+      transform: scale(1.5);
+  
+     }
+    
+  
+
+
+    
+    
+
+    .logo {
+      margin: 1rem auto;
+      padding: 2rem 0 1rem;
+
+    }
+
+    .menu-btn {
+      border: none;
+      background: transparent;
+
+
+    }
+
+    .copyright {
+      font-size: .75rem;
+      color: gray;
+      text-align: center;
+    }
+
+    .top-section {
+      background-image:
+       url("images/bg-tablet-pattern.svg"),
+        url("images/bg-tablet-pattern.svg");
+      background-size: 
+      460px,
+      330px;
+      background-position: 
+      top -125px right -140px,
+       right -200px bottom ;
+      background-repeat: 
+       no-repeat,
+       no-repeat;
+      
+      
+
+    }
+    
+    
+
+    .manage {
+      width: 110px;
+    }
+
+    .header-btn {
+      display: none;
+    }
+    p {
+  line-height: 1.6;
+   color: hsl(227, 12%, 61%);
+}
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 3rem;
+      }
+
+      .main-nav {
+        display: block;
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        width: auto;
+        max-width: none;
+        min-height: auto;
+        transform: none;
+        padding: 0;
+        width: 100%;
+      }
+
+      .header-btn {
+        display: block;
+        border-radius: 1.5rem;
+        padding: .85rem 2rem;
+        background-color: hsl(12, 88%, 59%);
+        margin: 3rem auto;
+        font-size: .75rem;
+        color: white;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+      }
+
+      .header>div:nth-child(2) {
+
+        flex: 1;
+      }
+
+      .main-nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+      }
+
+      .header>div:first-child,
+      .header>div:nth-child(2),
+      .header-btn {
+        display: flex;
+        align-items: center;
+      }
+
+      .menu-btn,
+      .menu-close {
+        display: none;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        padding-bottom: 0;
+           
+        
+       
+
+      }
+       
+
+
+
+
+        
+
+      .hero-image {
+        flex: 1;
+        width: 50%;
+        justify-content: flex-end;
+      }
+
+      .hero-image img {
+        width: 100%;
+
+      }
+
+      .hero-content {
+        flex: 1;
+        text-align: left;
+        width: 50%;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        max-width: 30ch;
+      }
+
+      .hero-content p {
+        max-width: 33ch;
+      }
+
+      .hero-content h1,
+      .hero-content p {
+        text-align: left;
+      }
+
+      .articles {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        padding : 1rem 3rem 2rem;
+         max-width: 1200px;
+        margin: 0 auto;
+
+
+
+      }
+
+
+      .articles .article-content p {
+        max-width: 43ch;
+        font-size: .98rem;
+      }
+
+      .article-intro {
+        flex: 1;
+        padding: 0;
+        margin: 0;
+      }
+
+      .article-content {
+        flex: 1;
+        padding-top: 0;
+      }
+
+      .article-intro h2 {
+        margin: 0 0 1rem;
+        padding: 0;
+        text-align: left;
+        max-width: 19ch;
+      }
+
+      .articles .article-intro p {
+        margin: 0;
+        text-align: left;
+        padding: 0;
+        align-self: flex-start;
+        text-indent: 0;
+
+      }
+
+      .article-heading {
+        position: relative;
+        padding-left: 5.5rem;
+        background: none;
+      }
+
+      .article-heading span {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 65px;
+        height: 35px;
+
+        border-radius: 999px;
+        background: hsl(12, 88%, 59%);
+        color: #fff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h3 {
+        margin: 0;
+        line-height: 35px;
+      }
+
+      .article-content p {
+        margin-left: 5.5rem;
+        padding: 1rem 0 0;
+      }
+
+
+      .dots {
+        display: none;
+      }
+
+      .testimonial {
+
+        flex: 1;
+
+        display: flex;
+
+        align-items: center;
+        flex-direction: column;
+        gap: .5rem;
+        position: relative;
+    background: hsl(0, 0%, 98%);
+    padding: 2rem .90rem 1rem;
+    min-width: 0;
+
+      }
+
+
+    .testimonial img {
+    width: 60px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    padding-bottom: 2rem;
+    
+    
+} 
+   .testimonial:nth-of-type(4) {
+        display: none;
+      }
+
+      .testimonial-list {
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 3rem;
+        width: 100%;
+        padding-top: 1.5rem;
+        
+      }
+     .testimonial h3 {
+      
+      padding-bottom: 1rem;
+     }
+
+      
+
+      .testimonial-list p {
+        font-size: .95rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        line-height: 1.6;
+        
+
+
+
+      }
+
+      .testimonial.active {
+        display: flex;
+        flex-direction: column;
+
+
+
+      }
+
+      .testimonials {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-bottom: 10rem;
+      }
+
+      .testimonial-btn {
+        margin: 6rem auto;
+
+      }
+
+      .cta .container {
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        max-width: 1200px;
+        padding: 0 3rem;
+        background: none;
+      }
+        .cta {
+          background-color: orangered;
+        background-image: url("images/bg-simplify-section-desktop.svg");
+        background-repeat: no-repeat;
+        background-position: right -260px bottom -10px;
+        background-size: cover;
+
+      }
+
+      .cta-btn {
+        margin: 0;
+        text-align: right;
+
+      }
+
+      .cta h2 {
+        max-width: 18ch;
+        text-align: left;
+        margin: 0;
+
+      }
+
+      .container {
+        padding-bottom: 8rem;
+      }
+
+      .footer .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr auto;
+        row-gap: 0;
+        align-items: stretch;
+        padding: 2rem 3rem;
+
+
+
+
+      }
+
+      .footer .container>a {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+
+
+
+
+
+      }
+
+      .social-media {
+        grid-column: 1;
+        grid-row: 2;
+        gap: 1rem;
+        justify-self: start;
+        align-self: end;
+        justify-content: flex-start;
+
+
+
+
+      }
+
+      .footer-nav {
+        display: flex;
+        grid-column: 2;
+        grid-row: 1/3;
+        justify-self: start;
+        gap: 15rem;
+        align-self: start;
+        margin: 0%;
+        padding: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+
+      .footer-nav ul {
+        margin: 0;
+        padding: 0;
+        font-size: .75rem;
+        font-weight: 400;
+      }
+
+      .form {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+          display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+
+
+      }
+
+      .copyright {
+        grid-column: 3;
+        grid-row: 2;
+        justify-self: end;
+        align-self: end;
+      }
+
+      
+
+      .form input {
+        width: 12rem;
+        padding: .75rem;
+        flex: none;
+
+      }
+
+      .form button {
+        padding: .75rem;
+        width: 3.5rem;
+      }
+
+      .logo,
+      .footer-nav,
+      .form,
+      .copyright {
+        margin: 0;
+        padding: 0;
+      }
+
+      .footer-logo,
+      .social-media,
+      .footer-nav,
+      .form,
+      .copyright {
+        align-self: start;
+      }
+
+      .top-section {
+        background-image: url("images/bg-tablet-pattern.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 675px;
+        background-position: top -105px right -205px;
+
+      } 
+      .middle-section {
+        background-image: url("./images/bg-tablet-pattern.svg");
+        background-repeat: no-repeat;
+        background-size: 580px;
+        background-position: left -290px top +400px;
+      }
+      .btn:hover,
+.header-btn:hover,
+.testimonial-btn:hover,
+.form-btn:hover
+ 
+ {
+  background-color: hsl(12, 88%, 69%);
+
+  transition: 0.3s ease;
+}
+.main-nav a:hover {
+  color: hsl(227, 12%, 61%);
+  transition: color .3s;
+}
+.footer-nav a:hover {
+  color: hsl(12, 88%, 59%);
+  transition: color .3s;
+}
+.cta-btn:hover{
+  color:hsl(12, 88%, 69%) ;
+  transition: 0.3s ease;
+}
+
+
+
+
+.social-media svg
+
+ {
+  fill: white;
+  transition: fill .3s;
+  width: 20px;
+  height: 20px;
+  transform: none;
+}
+
+.social-media a:hover svg {
+  color: hsl(12, 88%, 59%);
+}
+.error-message {
+  display: none;
+  color: red;
+  font-size: 0.75rem;
+  
+    margin-top: .4rem;
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+input.error {
+  border: 2px solid hsl(0, 93%, 68%);
+  color: hsl(0, 93%, 68%);
+}
+
+input.error::placeholder {
+  color: hsl(0, 93%, 68%);
+}
+    
+
+ }   
+  </style>
+</head>
+
+<body>
+  <div class="top-section">
+    <div class="container">
+
+      <header class="header">
+        <div>
+          <a href="/">
+            <img class="manage" src="images/logo.svg" alt="manage">
+          </a>
+        </div>
+        <div>
+          <button class="menu-btn" type="button" aria-label="open navigation menu">
+            <img src="images/icon-hamburger.svg" alt="">
+          </button>
+          <button class="menu-close" aria-label="Close menu">
+            <img src="images/icon-close.svg" alt="">
+          </button>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="#">Pricing </a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </nav>
+        </div>
+        <a href="/" class="header-btn">Get Started</a>
+      </header>
+
+      <section class="hero">
+        
+        <div class=" hero-image">
+          <picture>
+            <source media="(min-width: 768px)" srcset="images/illustration-intro-desktop.svg">
+
+            <img src="images/illustration-intro.svg" alt="illustration  showing teamwork">
+          </picture>
+        </div>
+        <div class="hero-content">
+          <h1>
+            Bring everyone together to build better products.
+          </h1>
+
+
+          <p> Manage makes it simple for software teams to plan day-to-day
+            tasks while keeping the larger team goals in view.
+          </p>
+          <a href="/" class="btn">Get Started</a>
+
+        </div>
+        
+      </section>
+  </div>
+  </div>
+    <div class="middle-section">
+      <section class="articles">
+
+        <div class="article-intro">
+          <h2>
+            What’s different about Manage?
+          </h2>
+          <p>
+            Manage provides all the functionality your team needs, without
+            the complexity. Our software is tailor-made for modern digital
+            product teams.
+          </p>
+        </div>
+        <div class=" article-content">
+          <article>
+            <div class="article-heading">
+              <span>01</span>
+              <h3>Track company-wide progress</h3>
+            </div>
+            <p>See how your day-to-day tasks fit into the wider vision. Go from
+              tracking progress at the milestone level all the way done to the
+              smallest of details. Never lose sight of the bigger picture again.
+            </p>
+          </article>
+          <article>
+            <div class="article-heading">
+              <span>02</span>
+              <h3>Advanced built-in reports</h3>
+            </div>
+            <p>Set internal delivery estimates and track progress toward company
+              goals. Our customisable dashboard helps you build out the reports
+              you need to keep key stakeholders informed.
+            </p>
+          </article>
+          <article>
+            <div class="article-heading">
+              <span>03</span>
+              <h3>Everything you need in one place</h3>
+            </div>
+            <p>Stop jumping from one service to another to communicate, store files,
+              track tasks and share documents. Manage offers an all-in-one team
+              productivity solution.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="testimonials">
+
+        <h2> What they’ve said</h2>
+
+        <div class="testimonial-list">
+          <article class="testimonial">
+
+            <img src="images/avatar-anisha.png" alt="Anisha Li">
+            <h3> Anisha Li</h3>
+
+            <p>
+              “Manage has supercharged our team’s workflow. The ability to maintain
+              visibility on larger milestones at all times keeps everyone motivated.”
+            </p>
+          </article>
+
+          <article class="testimonial active">
+
+            <img src="images/avatar-ali.png" alt="Ali Bravo">
+            <h3>Ali Bravo</h3>
+
+            <p>
+              “We have been able to cancel so many other subscriptions since using
+              Manage. There is no more cross-channel confusion and everyone is much
+              more focused.”
+            </p>
+          </article>
+
+
+          <article class="testimonial">
+
+            <img src="images/avatar-richard.png" alt="Richard Watts">
+            <h3> Richard Watts</h3>
+
+            <p>
+              “Manage allows us to provide structure and process. It keeps us organized
+              and focused. I can’t stop recommending them to everyone I talk to!”
+            </p>
+          </article>
+          <article class="testimonial">
+
+            <img src="images/avatar-shanai.png" alt="Shanai Gough">
+            <h3>Shanai Gough</h3>
+
+
+            <p>
+              “Their software allows us to track, manage and collaborate on our projects
+              from anywhere. It keeps the whole team in-sync without being intrusive.”
+            </p>
+          </article>
+
+        </div>
+        <div class="dots">
+          <button class="dot "></button>
+          <button class="dot active"></button>
+          <button class="dot"></button>
+          <button class="dot"></button>
+        </div>
+        <a href="/" class="testimonial-btn">Get Started</a>
+
+      </section>
+  </div>
+    <section class="cta">
+      <div class="container">
+        <h2> Simplify how your team works today.</h2>
+        <a href="/" class="cta-btn">Get Started</a>
+      </div>
+    </section>
+  
+  <footer class="footer">
+    <div class="container">
+
+      <form class="form" novalidate>
+        <label for="email" class="sr-only">email address</label>
+        <div class="input-wrapper">
+        <input id="email" type="email" placeholder="Updates in your inbox...">
+         <p class="error-message">
+            Please insert a valid email
+          </p>
+        </div>
+        <button type="submit" class="form-btn">Go</button>
+          
+
+      </form>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </nav>
+      <div class="social-media">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" hieght="20"><path fill="currentColor" d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/></svg>
+        </a>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg"  width="21" height="20"><path fill="currentColor" d="M10.333 0c-5.522 0-10 4.478-10 10 0 5.523 4.478 10 10 10 5.523 0 10-4.477 10-10 0-5.522-4.477-10-10-10zm3.701 14.077c-1.752.12-5.653.12-7.402 0C4.735 13.947 4.514 13.018 4.5 10c.014-3.024.237-3.947 2.132-4.077 1.749-.12 5.651-.12 7.402 0 1.898.13 2.118 1.059 2.133 4.077-.015 3.024-.238 3.947-2.133 4.077zM8.667 8.048l4.097 1.949-4.097 1.955V8.048z"/></svg>
+        </a>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18"><path fill="currentColor" d="M20.667 2.797a8.192 8.192 0 01-2.357.646 4.11 4.11 0 001.804-2.27 8.22 8.22 0 01-2.606.996A4.096 4.096 0 0014.513.873c-2.649 0-4.595 2.472-3.997 5.038a11.648 11.648 0 01-8.457-4.287 4.109 4.109 0 001.27 5.478A4.086 4.086 0 011.47 6.59c-.045 1.901 1.317 3.68 3.29 4.075a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.834 2.85 8.25 8.25 0 01-6.075 1.7 11.616 11.616 0 006.29 1.843c7.618 0 11.922-6.434 11.662-12.205a8.354 8.354 0 002.048-2.124z"/></svg>
+        </a>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="currentColor" d="M10 0C4.478 0 0 4.477 0 10c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.545 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S15.522 0 10 0z"/></svg>
+        </a>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"><path fill="currentColor" d="M10.333 1.802c2.67 0 2.987.01 4.042.059 2.71.123 3.976 1.409 4.1 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.058 4.042-.124 2.687-1.386 3.975-4.099 4.099-1.055.048-1.37.058-4.042.058-2.67 0-2.986-.01-4.04-.058-2.717-.124-3.976-1.416-4.1-4.1-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058zm0-1.802C7.618 0 7.278.012 6.211.06 2.579.227.56 2.242.394 5.877.345 6.944.334 7.284.334 10s.011 3.057.06 4.123c.166 3.632 2.181 5.65 5.816 5.817 1.068.048 1.408.06 4.123.06 2.716 0 3.057-.012 4.124-.06 3.628-.167 5.651-2.182 5.816-5.817.049-1.066.06-1.407.06-4.123s-.011-3.056-.06-4.122C20.11 2.249 18.093.228 14.458.06 13.39.01 13.049 0 10.333 0zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.339-9.87a1.2 1.2 0 10-.001 2.4 1.2 1.2 0 000-2.4z"/></svg>
+        </a>
+      </div>
+
+      <a href="/">
+        <img class="logo" src="images/logo-white.svg" alt="manage">
+      </a>
+
+
+      <p class="copyright"> Copyright 2020. All Rights Reserved</p>
+    </div>
+  </footer>
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Hanan Edward</a>.
+  </div>
+  <script>
+    const testimonials = document.querySelectorAll(".testimonial");
+    const dots = document.querySelectorAll(".dot");
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+
+        testimonials.forEach(item => item.classList.remove("active"));
+        dots.forEach(item => item.classList.remove("active"));
+
+        testimonials[index].classList.add("active");
+        dots[index].classList.add("active");
+
+      });
+    });
+    const openBtn = document.querySelector(".menu-btn");
+    const closeBtn = document.querySelector(".menu-close");
+    const nav = document.querySelector(".main-nav");
+
+    openBtn.addEventListener("click", () => {
+      nav.classList.add("active");
+
+      openBtn.style.display = "none";
+      closeBtn.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      nav.classList.remove("active");
+
+      closeBtn.style.display = "none";
+      openBtn.style.display = "block";
+    });
+
+   const form = document.querySelector(".form");
+const email = document.querySelector("#email");
+const errorMessage = document.querySelector(".error-message");
+
+form.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+  if(email.value === "" || !email.checkValidity())  {
+    errorMessage.style.display = "block";
+    email.classList.add("error"); 
+  } else {
+    errorMessage.style.display = "none";
+     email.classList.remove("error");
+  }
+
+});
+ 
+  </script>
+</body>
+
+</html>
